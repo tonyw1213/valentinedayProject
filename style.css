@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem 2rem;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90vw;
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.question {
+    font-size: 2.5rem;
+    color: #e91e63;
+    margin-bottom: 2rem;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.gif-container {
+    margin: 2rem 0;
+}
+
+.cute-gif {
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 1rem 2.5rem;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.yes-btn {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.yes-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(245, 87, 108, 0.4);
+}
+
+.no-btn {
+    background: #ffffff;
+    color: #666;
+    border: 2px solid #ddd;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.no-btn:hover {
+    background: #f5f5f5;
+}
+
+/* Hearts animation */
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff69b4;
+    transform: rotate(45deg);
+    animation: float 6s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+.heart:before,
+.heart:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff69b4;
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -10px;
+    left: 0;
+}
+
+.heart:after {
+    top: 0;
+    left: -10px;
+}
+
+.heart:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 6s;
+}
+
+.heart:nth-child(2) {
+    left: 30%;
+    animation-delay: 1s;
+    animation-duration: 8s;
+}
+
+.heart:nth-child(3) {
+    left: 50%;
+    animation-delay: 2s;
+    animation-duration: 7s;
+}
+
+.heart:nth-child(4) {
+    left: 70%;
+    animation-delay: 1.5s;
+    animation-duration: 9s;
+}
+
+.heart:nth-child(5) {
+    left: 90%;
+    animation-delay: 0.5s;
+    animation-duration: 7.5s;
+}
+
+@keyframes float {
+    0% {
+        top: 100%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        top: -10%;
+        opacity: 0;
+    }
+}
+
+/* Success screen */
+.success-title {
+    font-size: 3rem;
+    color: #e91e63;
+    margin-bottom: 1rem;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.success-message {
+    font-size: 1.5rem;
+    color: #666;
+    margin: 1rem 0;
+}
+
+.date-message {
+    font-size: 1.2rem;
+    color: #e91e63;
+    margin-top: 1.5rem;
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .question {
+        font-size: 1.8rem;
+    }
+
+    .cute-gif {
+        width: 200px;
+        height: 200px;
+    }
+
+    button {
+        padding: 0.8rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    .success-title {
+        font-size: 2.2rem;
+    }
+
+    .success-message {
+        font-size: 1.2rem;
+    }
+}
