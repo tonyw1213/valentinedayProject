@@ -49,8 +49,15 @@ body {
 .question {
     font-size: 2.5rem;
     color: #e91e63;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     animation: bounce 1s infinite;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-style: italic;
 }
 
 @keyframes bounce {
@@ -107,8 +114,11 @@ button {
     background: #ffffff;
     color: #666;
     border: 2px solid #ddd;
-    position: absolute;
     transition: all 0.3s ease;
+}
+
+.no-btn.moving {
+    position: absolute;
 }
 
 .no-btn:hover {

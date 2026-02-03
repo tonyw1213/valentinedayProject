@@ -15,6 +15,9 @@ yesBtn.addEventListener('click', () => {
 
 // Make No button run away from cursor
 noBtn.addEventListener('mouseover', () => {
+    // Add moving class to make button absolutely positioned
+    noBtn.classList.add('moving');
+
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
     const btnWidth = noBtn.offsetWidth;
@@ -46,6 +49,10 @@ noBtn.addEventListener('mouseover', () => {
 // Also run away when trying to click
 noBtn.addEventListener('mousedown', (e) => {
     e.preventDefault();
+
+    // Add moving class to make button absolutely positioned
+    noBtn.classList.add('moving');
+
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
     const btnWidth = noBtn.offsetWidth;
